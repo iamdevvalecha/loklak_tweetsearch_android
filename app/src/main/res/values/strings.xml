@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Loklak Tweet Search</string>
+    <string name="search">Search</string>
+    <string name="hint">Add some text to search!</string>
+</resources>
