@@ -26,3 +26,4 @@
 </div>
 
 ##Licence 
+This project is currently licensed under the GNU General Public License v3
