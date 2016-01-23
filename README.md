@@ -26,7 +26,7 @@
 </div>
 
 ## Further Reading 
-> Learn more about FOSSASIA and their nobel initiatives [here](http://fossasia.org/)
-> Learn more about Loklak, the backbone of this app [here] (http://loklak.org/)
+* Learn more about FOSSASIA and their nobel initiatives [here](http://fossasia.org/)
+* Learn more about Loklak, the backbone of this app [here] (http://loklak.org/)
 ##Licence 
-This project is currently licensed under the GNU General Public License v3
+>This project is currently licensed under the GNU General Public License v3
