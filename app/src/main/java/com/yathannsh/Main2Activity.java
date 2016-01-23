@@ -3,6 +3,7 @@ package com.yathannsh;
 /**
  * Created by yathannsh on 1/20/2016.
  */
+
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.net.ConnectivityManager;
@@ -13,6 +14,7 @@ import android.os.Bundle;
 import android.text.Html;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -51,7 +53,6 @@ public class Main2Activity extends AppCompatActivity {
         listItems = new ArrayList<>();
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listItems);
         listView.setAdapter(adapter);
-
         addListenerOnButton();
     }
 
@@ -65,14 +66,22 @@ public class Main2Activity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
+                //hide the keyboard
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(mEdit.getWindowToken(), 0);
+
+                //clear the previous searched data if any
                 listItems.clear();
                 adapter.notifyDataSetChanged();
+
+                //check for wifi
                 if (isConnectedWifi()) {
                     String search_string = mEdit.getText().toString();
                     if (search_string == null || search_string.isEmpty()) {
                         Toast.makeText(getApplicationContext(), "Please enter some text to search.", Toast.LENGTH_LONG).show();
                     } else {
                         progress = ProgressDialog.show(Main2Activity.this, "Loading", "Finding results for " + search_string, true);
+                        //start the Async Task
                         new LoadThread().execute(search_string, null, null);
                     }
                 } else {
