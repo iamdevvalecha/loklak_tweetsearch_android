@@ -16,7 +16,7 @@
 *  You can test it by running it on either a real device or an emulated one by going to Run>Run 'app' or presing the Run icon in the toolbar.
 
 ## Working
-> ###Type a query and boom!
+> ####Type a query and boom!
 <div align ="Center">
 <img src ="https://raw.githubusercontent.com/Yathannsh/LoklakAndroidApp/master/screenshots/hj.gif"> 
 </div>
